@@ -47,21 +47,6 @@
 
 ## 📌 Trouble Shooting: 트러블 슈팅 
 
-<details> <summary>➡️ 😛김민석: 새로고침시 데이터가 안불러와지는 문제가 있었습니다. </summary> <div markdown="1">
-  <br/>
-
-**`문제원인`**
-  * 인터셉터를 사용하기에 토큰이 자동으로 담겨 서버에 요청을 보내는 줄 알았는데 새로고침을 할 경우 인터셉터가 실행되기전에 요청을 보내고 있었습니다. [개발자도구]의 [네트워크]에서 로그를 보고 토큰이 담겨지지 않은 것을 확인할 수 있었습니다. 
-  
-**`해결방안`**
-  * useEffect를 통해 axios인스턴스를 실행시켜 데이터를 불러왔었는데, 인스턴스가 실행되기전에 sessionStorage.setItem으로 토큰을 담는 코드를 작성해주었습니다. 
-  
-**`자세한 내용`**
-  * [React | 새로고침시 데이터가 안불러와지는 문제](https://velog.io/@shackstack/React-%EC%83%88%EB%A1%9C%EA%B3%A0%EC%B9%A8%EC%8B%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0%EA%B0%80-%EC%95%88%EB%B6%88%EB%9F%AC%EC%99%80%EC%A7%80%EB%8A%94-%EB%AC%B8%EC%A0%9C)
-
-
-  </div>
-  </details>
 
 <details> <summary>➡️ 🥸오정진: React slick 각 자식요소에 Margin 및 Padding css 설정이 안 되는 이슈를 발견하였습니다. </summary> <div markdown="1">
   <br/>
@@ -72,6 +57,21 @@
   
 **`해결방안`**
   * react slick build시 사용되는 slick.css와 slick-theme.css를 따로 빼와서 margin과 padding default 값을 삭제 해, 원하는 대로 css 수정을 가능하게 변경하였습니다.
+  
+  </div>
+  </details>
+  
+  <details> <summary>➡️ 🥸오정진: 불필요한 SSE 구독요청 발생 </summary> <div markdown="1">
+  <br/>
+
+**`문제원인`**
+  * SSE를 컴포넌트화하여 전체페이지에서 사용되는 navbar에 담아서 호출했는대
+navbar 랜더시 콜백함수에 빠져 새로고침이 여러번되면서 SSE구독이 반복되는 문제가 발생했습니다.
+
+  
+**`해결방안`**
+  * 이를 해결하기 위해 sse를 구독하는 시점이 로그인 시와 페이지 새로고침 시 둘로 나누어 생각해야 한다는것을 파악하였고 구독시점에 따라서 사용될 수 있게끔
+코드를 분리하여 작성함으로써 해결할 수 있었습니다.
   
   </div>
   </details>
