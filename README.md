@@ -1,7 +1,6 @@
 # Earth, us 🌎
 
 ## 🌳 Intro: 서비스 소개 
-<strong> 서비스 : https://www.earthus.net/ </strong>
 <br/>
 <strong>Earth, us</strong>란 제로웨이스트를 위한 커뮤니티로 유저들의 일상과 노하우를 공유하고,<br/>
 미션을 제공받아 완수하여 장기&지속적인 환경보호 운동 실천을 독려하고 개인 미션 수행완료를 통한 뱃지획득 기능으로 성취감을 부여하여 <br/>
